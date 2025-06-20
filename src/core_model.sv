@@ -1,7 +1,7 @@
 // Main Processor Module
 //==============================================================================
 module core_model
-  import riscv_pkg::*;
+  
 (
     parameter DMemInitFile  = "./test/core/dmem.hex",     // data memory initialization file
     parameter IMemInitFile  = ".test/core/imem.hex",     // instruction memory initialization file
@@ -21,6 +21,7 @@ module core_model
     output logic  [XLEN-1:0] mem_data_o  [IssueWidth],    // retired memory data
     output logic             mem_wrt_o   [IssueWidth]     // retired memory write enable signal
 );
+import riscv_pkg::*;
 
     // Internal signals
     logic [XLEN-1:0] pc, next_pc;
