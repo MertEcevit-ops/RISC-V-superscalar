@@ -1,4 +1,6 @@
-module issue_unit (
+module issue_unit
+    import core_types_pkg::*;
+(
     input logic clk,
     input logic reset,
     input logic [31:0] inst_a,

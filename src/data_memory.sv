@@ -1,7 +1,7 @@
 // Data Memory
 //==============================================================================
 module data_memory #(
-    parameter InitFile = ".test/core/dmem.hex"
+    parameter InitFile = ".test/core/dmem.mem"
 ) (
     input logic clk,
     input logic [31:0] addr,

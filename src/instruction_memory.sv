@@ -1,5 +1,5 @@
 module instruction_memory #(
-    parameter InitFile = "./test/core/imem.hex"
+    parameter InitFile = "./test/core/imem.mem"
 ) (
     input logic clk,
     input logic [31:0] addr_a,

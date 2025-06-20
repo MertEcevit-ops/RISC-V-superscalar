@@ -1,4 +1,6 @@
-module hazard_unit (
+module hazard_unit
+    import core_types_pkg::*;
+(
     input decode_signals_t decode_a,
     input decode_signals_t decode_b,
     input logic [31:0] scoreboard,

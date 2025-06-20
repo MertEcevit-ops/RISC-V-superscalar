@@ -1,4 +1,6 @@
-module datapath_a (
+module datapath_a
+    import core_types_pkg::*;
+(
     input logic clk,
     input logic reset,
     input decode_signals_t decode_in,

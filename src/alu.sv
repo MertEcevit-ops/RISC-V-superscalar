@@ -1,4 +1,6 @@
-module alu (
+module alu 
+    import core_types_pkg::*;
+(
     input logic [31:0] a,
     input logic [31:0] b,
     input alu_op_e alu_op,

@@ -1,6 +1,8 @@
 // Datapath B (Memory + ALU Operations)
 //==============================================================================
-module datapath_b (
+module datapath_b
+    import core_types_pkg::*;
+(
     input logic clk,
     input logic reset,
     input decode_signals_t decode_in,
