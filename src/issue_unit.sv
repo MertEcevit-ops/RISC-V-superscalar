@@ -1,6 +1,36 @@
-module issue_unit
-    import core_types_pkg::*;
-(
+typedef struct packed {
+    logic [6:0] opcode;
+    logic [4:0] rd, rs1, rs2;
+    logic [2:0] funct3;
+    logic [6:0] funct7;
+    logic [31:0] imm;
+    logic [31:0] pc;
+    logic [31:0] inst;
+    
+    // Control signals
+    logic reg_write;
+    logic mem_read;
+    logic mem_write;
+    logic branch;
+    logic jump;
+    logic alu_src;
+    alu_op_e alu_op;
+    logic [1:0] wb_sel;
+} decode_signals_t;
+
+typedef struct packed {
+    logic [4:0] rd;
+    logic [31:0] result;
+    logic [31:0] pc;
+    logic [31:0] inst;
+    logic [31:0] mem_addr;
+    logic [31:0] mem_data;
+    logic mem_write;
+    logic reg_write;
+    logic valid;
+} execute_signals_t;
+
+module issue_unit (
     input logic clk,
     input logic reset,
     input logic [31:0] inst_a,

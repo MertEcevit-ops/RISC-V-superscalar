@@ -1,11 +1,24 @@
-module alu 
-    import core_types_pkg::*;
-(
+module alu (
     input logic [31:0] a,
     input logic [31:0] b,
-    input alu_op_e alu_op,
+    input logic [3:0] alu_op,
     output logic [31:0] result
 );
+
+    // ALU Operation Definitions
+    localparam ALU_ADD  = 4'b0000;  // Addition
+    localparam ALU_SUB  = 4'b1000;  // Subtraction  
+    localparam ALU_SLL  = 4'b0001;  // Shift Left Logical
+    localparam ALU_SLT  = 4'b0010;  // Set Less Than
+    localparam ALU_SLTU = 4'b0011;  // Set Less Than Unsigned
+    localparam ALU_XOR  = 4'b0100;  // XOR
+    localparam ALU_SRL  = 4'b0101;  // Shift Right Logical
+    localparam ALU_SRA  = 4'b1101;  // Shift Right Arithmetic
+    localparam ALU_OR   = 4'b0110;  // OR
+    localparam ALU_AND  = 4'b0111;  // AND
+    localparam ALU_CTZ  = 4'b1001;  // Count Trailing Zeros
+    localparam ALU_CLZ  = 4'b1010;  // Count Leading Zeros
+    localparam ALU_CPOP = 4'b1011;  // Count Population
 
     // Helper functions for bit manipulation
     function automatic logic [31:0] count_trailing_zeros(logic [31:0] value);

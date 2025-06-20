@@ -1,6 +1,4 @@
-module superscalar_core
-    import core_types_pkg::*;
-(
+module superscalar_core (
     input logic clk,
     input logic reset,
     

@@ -1,7 +1,5 @@
-// Data Memory
-//==============================================================================
 module data_memory #(
-    parameter InitFile = ".test/core/dmem.mem"
+    parameter InitFile = "dmem.mem"
 ) (
     input logic clk,
     input logic [31:0] addr,

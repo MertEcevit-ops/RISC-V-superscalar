@@ -1,6 +1,4 @@
-module decoder
-    import core_types_pkg::*;
-(
+module decoder (
     input logic [31:0] inst,
     input logic [31:0] pc,
     output decode_signals_t decode_out
@@ -13,7 +11,7 @@ module decoder
         decode_out.inst = inst;
         
         // Extract fields
-        decode_out.opcode = opcode_e'(inst[6:0]);
+        decode_out.opcode = inst[6:0];
         decode_out.rd = inst[11:7];
         decode_out.rs1 = inst[19:15];
         decode_out.rs2 = inst[24:20];
