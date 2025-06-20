@@ -7,7 +7,7 @@ module core_model
     parameter IMemInitFile  = ".test/core/imem.hex",     // instruction memory initialization file
     parameter TableFile     = "./test/core/table.log",    // processor state and used for verification/grading
     parameter IssueWidth    = 2               // 
-)   (
+);  (
     input  logic             clk_i,                       // system clock
     input  logic             rstn_i,                      // system reset
     input  logic  [XLEN-1:0] addr_i,                      // memory adddres input for reading
