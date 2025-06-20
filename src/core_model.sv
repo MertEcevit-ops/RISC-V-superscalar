@@ -1,17 +1,14 @@
-// Main Processor Module
-//==============================================================================
 module core_model
-  
+    import riscv_pkg::*;
 #(
-    parameter DMemInitFile  = "./test/core/dmem.hex",     // data memory initialization file
-    parameter IMemInitFile  = ".test/core/imem.hex",     // instruction memory initialization file
-    parameter TableFile     = "./test/core/table.log",    // processor state and used for verification/grading
-    parameter IssueWidth    = 2               // 
-);  
-
+    parameter string DMemInitFile  = "./test/core/dmem.mem",     // data memory initialization file
+    parameter string IMemInitFile  = "./test/core/imem.mem",     // instruction memory initialization file
+    parameter string TableFile     = "./test/core/table.log",    // processor state and used for verification/grading
+    parameter int    IssueWidth    = 2                           // issue width
+) (
     input  logic             clk_i,                       // system clock
     input  logic             rstn_i,                      // system reset
-    input  logic  [XLEN-1:0] addr_i,                      // memory adddres input for reading
+    input  logic  [XLEN-1:0] addr_i,                      // memory address input for reading
     output logic  [XLEN-1:0] data_o,                      // memory data output for reading
     output logic             update_o    [IssueWidth],    // retire signal
     output logic  [XLEN-1:0] pc_o        [IssueWidth],    // retired program counter
@@ -22,7 +19,6 @@ module core_model
     output logic  [XLEN-1:0] mem_data_o  [IssueWidth],    // retired memory data
     output logic             mem_wrt_o   [IssueWidth]     // retired memory write enable signal
 );
-import riscv_pkg::*;
 
     // Internal signals
     logic [XLEN-1:0] pc, next_pc;
