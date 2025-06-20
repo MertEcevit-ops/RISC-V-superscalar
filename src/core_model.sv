@@ -2,7 +2,7 @@
 //==============================================================================
 module core_model
   
-(
+#(
     parameter DMemInitFile  = "./test/core/dmem.hex",     // data memory initialization file
     parameter IMemInitFile  = ".test/core/imem.hex",     // instruction memory initialization file
     parameter TableFile     = "./test/core/table.log",    // processor state and used for verification/grading
